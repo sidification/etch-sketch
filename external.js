@@ -1,20 +1,28 @@
-const container = document.querySelector(".container")
+const sketchContainer = document.querySelector(".sketch-container")
+let sliderVal = document.querySelector("#slider-val") 
 
-for (let i = 0; i < 16; i++) {
+// update value of slider
+const mySlider = document.getElementById('mySlider')
+mySlider.addEventListener('input', () => {
+  sliderVal.textContent = mySlider.value;
+})
+
+for (let i = 0; i < sliderVal.textContent; i++) {
   const sqRow = document.createElement("div")
   sqRow.setAttribute("class", "square-row")
-  for (let j = 0; j < 16; j++) {
+  for (let j = 0; j < sliderVal.textContent; j++) {
     const square = document.createElement("div")
     square.setAttribute("class", "square")
     sqRow.appendChild(square)
   }
-  container?.appendChild(sqRow)
+  sketchContainer?.appendChild(sqRow)
 }
 
 const squares = document.querySelectorAll('.square')
-// console.log(square.length)
 squares.forEach((square) => {
   square.addEventListener('mouseover', (e) => {
   e.target.style.backgroundColor = 'black';
   })
 });
+
+

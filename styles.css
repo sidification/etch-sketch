@@ -1,15 +1,36 @@
 .square {
   width: 20px;
-  height: 20px;
-  border: 1px solid red;
+  aspect-ratio: 1/1;
+  flex: 1 1 auto;
 }
 
 .square-row {
   display: flex;
-  margin: auto;
+  justify-content: center;
+  align-items: center;
+  /* width: inherit; */
+  flex: 1 1 auto;
 }
 
-.container {
+.sketch-container {
   display: flex;
   flex-direction: column;
+  width: 700px;
+  height: 700px;
+  margin: auto;
+  border: 1px solid black;
+  
+}
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

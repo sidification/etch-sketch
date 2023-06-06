@@ -9,7 +9,15 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container"></div>
+    <h1 id="'title">Etch-a-Sketch!</h1>
+    <div class="slider-container">
+      <label for="mySlider">Granularity of Sketch-Pad:</label>
+      <div class="slider">
+        <input type="range" min="10" max="100" value="50" id="mySlider">
+        <div id="slider-val">50</div> 
+      </div>
+    </div>
+    <div class="sketch-container"></div>
     <script src="external.js"></script>
   </body>
 </html>
