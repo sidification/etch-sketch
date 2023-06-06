@@ -1,3 +1,14 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body > * {
+  width: 700px;
+  height: auto;
+  margin: auto; 
+}
 .square {
   width: 20px;
   aspect-ratio: 1/1;
@@ -33,4 +44,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.color-box {
+  display: flex;
+  justify-content: center;
 }

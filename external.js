@@ -18,6 +18,7 @@ for (let i = 0; i < sliderVal.textContent; i++) {
   sketchContainer?.appendChild(sqRow)
 }
 
+// hover
 const squares = document.querySelectorAll('.square')
 squares.forEach((square) => {
   square.addEventListener('mouseover', (e) => {
@@ -25,4 +26,11 @@ squares.forEach((square) => {
   })
 });
 
+// clear button
+const clear = document.querySelector('#clear')
+clear.addEventListener('click', (e) => {
+  squares.forEach((square) => {
+    square.style.backgroundColor = 'white';
+  })
+})
 
