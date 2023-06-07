@@ -1,5 +1,6 @@
 const sketchContainer = document.querySelector(".sketch-container")
-let sliderVal = document.querySelector("#slider-val") 
+let sliderVal = document.querySelector("#slider-val")
+let hoverColor = 'black';
 
 // update value of slider
 const mySlider = document.getElementById('mySlider')
@@ -22,7 +23,7 @@ for (let i = 0; i < sliderVal.textContent; i++) {
 const squares = document.querySelectorAll('.square')
 squares.forEach((square) => {
   square.addEventListener('mouseover', (e) => {
-  e.target.style.backgroundColor = 'black';
+  e.target.style.backgroundColor = hoverColor;
   })
 });
 
@@ -32,5 +33,11 @@ clear.addEventListener('click', (e) => {
   squares.forEach((square) => {
     square.style.backgroundColor = 'white';
   })
+})
+
+// color button
+const colors = document.getElementById('colors')
+colors.addEventListener('input', (e) => {
+  hoverColor = e.target.value;
 })
 
