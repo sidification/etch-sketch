@@ -1,11 +1,28 @@
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Nanum Pen Script';
+  background-image: url('wave.svg');
+  background-size: cover;
+}
+
+#title {
+  text-align: center;
+  font-size: 5em;
+  font-weight: bolder;
+  color: orange;
+  height: fit-content;
+  margin:0 auto;
 }
 
 body > * {
-  width: 700px;
+  width: 600px;
   height: auto;
   margin: auto; 
 }
@@ -26,27 +43,26 @@ body > * {
 .sketch-container {
   display: flex;
   flex-direction: column;
-  width: 700px;
-  height: 700px;
-  margin: auto;
+  width: 600px;
+  height: 70%;
+  margin: 2% auto;
   border: 1px solid black;
+  background-color: white;
   
 }
 
-.slider-container {
+.scale-container {
+  font-size: large;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 7px;
 }
 
-.slider {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-.color-box {
+
+.color-size-box {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  margin: 1% auto;
 }

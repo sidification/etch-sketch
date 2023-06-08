@@ -1,43 +1,62 @@
 const sketchContainer = document.querySelector(".sketch-container")
-let sliderVal = document.querySelector("#slider-val")
+let sliderVal = 75;
 let hoverColor = 'black';
-
-// update value of slider
-const mySlider = document.getElementById('mySlider')
-mySlider.addEventListener('input', () => {
-  sliderVal.textContent = mySlider.value;
-})
-
-for (let i = 0; i < sliderVal.textContent; i++) {
-  const sqRow = document.createElement("div")
-  sqRow.setAttribute("class", "square-row")
-  for (let j = 0; j < sliderVal.textContent; j++) {
-    const square = document.createElement("div")
-    square.setAttribute("class", "square")
-    sqRow.appendChild(square)
-  }
-  sketchContainer?.appendChild(sqRow)
-}
-
-// hover
+createSketchPad(sliderVal); 
 const squares = document.querySelectorAll('.square')
-squares.forEach((square) => {
-  square.addEventListener('mouseover', (e) => {
-  e.target.style.backgroundColor = hoverColor;
+
+function createSketchPad(sliderVal) {
+  for (let i = 0; i < sliderVal; i++) {
+    const sqRow = document.createElement("div")
+    sqRow.setAttribute("class", "square-row")
+    for (let j = 0; j < sliderVal; j++) {
+      const squares = document.createElement("div")
+      squares.setAttribute("class", "square")
+      sqRow.appendChild(squares)
+    }
+    sketchContainer?.appendChild(sqRow)
+  }
+  const squares = document.querySelectorAll('.square')
+  squares.forEach((square) => {
+    square.addEventListener('mouseover', (e) => {
+    e.target.style.backgroundColor = hoverColor;
   })
 });
+}
 
-// clear button
-const clear = document.querySelector('#clear')
-clear.addEventListener('click', (e) => {
+function clear() {
+  const squares = document.querySelectorAll('.square')
   squares.forEach((square) => {
     square.style.backgroundColor = 'white';
-  })
 })
+};
+
+//get children of scale which includes the buttons
+const scaleBtns = document.querySelectorAll('.scale-container button')
+scaleBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    if (btn.textContent == 'Small') {
+      sliderVal = 75;
+    } 
+    else if (btn.textContent == 'Medium') {
+      sliderVal = 50;
+    }
+    else {
+      sliderVal = 25;
+    };
+  sketchContainer.replaceChildren();
+  createSketchPad(sliderVal);
+  })});
 
 // color button
 const colors = document.getElementById('colors')
 colors.addEventListener('input', (e) => {
   hoverColor = e.target.value;
 })
+
+
+// clear button
+const clearBtn = document.querySelector('#clear')
+clearBtn.addEventListener('click', clear);
+
+
 
