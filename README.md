@@ -1,7 +1,8 @@
 # Sketch Pad Project
 
 Welcome to the Sketch Pad project! This is a fun and interactive project where you create a 16x16 grid of square divs on a webpage. 
-Live Code Demo: https://sidification.github.io/etch-sketch/
+
+*Live Code Demo: https://sidification.github.io/etch-sketch/*
 
 ## About The Project
 
